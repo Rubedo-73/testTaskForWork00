@@ -3,7 +3,7 @@ import {
 } from 'sequelize';
 
 async function up ({context: queryInterface, Sequelize}) {
-    await queryInterface.createTable('Users', {
+    await queryInterface.createTable('users', {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -31,7 +31,7 @@ async function up ({context: queryInterface, Sequelize}) {
 }
 
 async function down ({ queryInterface }) {
-    await queryInterface.dropTable('Users');
+    await queryInterface.dropTable('users');
 }
 
 export {
