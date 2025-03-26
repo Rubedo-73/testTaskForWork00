@@ -1,0 +1,33 @@
+{
+  "name": "testtaskforwork00",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --env-file=./config/.env.test.local ./src/main.js ",
+    "upDB": "docker-compose -f ./container/postgres.docker-compose.yml --env-file ./config/.env.test.local up",
+    "downDB": "docker-compose down test_postgres_00",
+    "reloadDB": "docker-compose restart test_postgres_00",
+    "rmConteiner": "docker-compose rm test_postgres_00"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rubedo-73/testTaskForWork00.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rubedo-73/testTaskForWork00/issues"
+  },
+  "homepage": "https://github.com/Rubedo-73/testTaskForWork00#readme",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.14.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.6",
+    "umzug": "^3.8.2"
+  }
+}

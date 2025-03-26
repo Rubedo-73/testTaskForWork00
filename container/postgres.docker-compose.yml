@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+
+  db:
+    image: postgres
+    container_name: test_postgres_00
+    restart: always
+    # set shared memory limit when using docker-compose
+    shm_size: 128mb
+    environment:
+      POSTGRES_DB: ${PG_DB}
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_PORT: ${PG_PORT}
+    ports:
+      - ${PG_DOCKER_PORT}:${PG_PORT}
