@@ -3,8 +3,14 @@ import express from 'express';
 import { User } from './db/models/index.js'
 import { sequelize } from './db/postgresql.js'
 import { Umzug, SequelizeStorage } from 'umzug';
+import router from './router/index.js';
 
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use(router)
+
 const port = process.env.server_port;
 
 const umzug = new Umzug({
